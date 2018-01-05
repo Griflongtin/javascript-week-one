@@ -4,6 +4,13 @@ var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
 var del = require('del');
 var jshint = require('gulp-jshint');
+var lib = require('bower-files')();
+
+gulp.task('bowerJS', function () {
+  return gulp.src(lib.ext('js').files)
+    .pipe(concat('vendor.min.js'))
+    .pipe(gulp.dest('./build/js'));
+});
 
 gulp.task('jshint', function(){
   return gulp.src(['js/*.js'])
@@ -33,7 +40,7 @@ gulp.task("clean", function(){
 
 
 
-
 gulp.task('build', ['clean'], function() {
   gulp.start('jsBrowserify');
+  gulp.start('bowerJS');
 });

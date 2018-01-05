@@ -1,0 +1,21 @@
+{
+  "name": "javascript-week-one",
+  "description": "_:heavy_check_mark:_",
+  "main": "index.js",
+  "authors": [
+    "Griffin P Longtin <griflongtin@live.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Griflongtin/javascript-week-one",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "moment": "^2.20.1"
+  }
+}
