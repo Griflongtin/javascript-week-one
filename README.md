@@ -1,15 +1,17 @@
-# _{GALACTIC AGE CALCULATOR}_
+# _GALACTIC AGE CALCULATOR_
 
-#### _{Tells you your age based on planets orbits }, {1/5/2018}_
+#### _Tells you your age based on planets orbits , {1/5/2018_
 
-#### By _**{GRIFFIN P LOGNTIN}**_
+#### By _**GRIFFIN P LOGNTIN**_
 
 ## Description
 
-_{ }_
+_:heavy_check_mark:_
+
 
 ## Specs
-:heavy_check_mark:
+
+
 | Specs       | Question                                                                    | input          | output       | Completed          |
 |-------------|-----------------------------------------------------------------------------|----------------|--------------|--------------------|
 | :one:       | User inputs the date they were born to determine an accurate age in seconds | "1/4/17"       | '31,536,000' |  |
@@ -31,7 +33,7 @@ _{ }_
 
 ## Support and contact details
 
-_{ For support or any question please E-mail me at GrifLongtin@live.com }_
+_For support or any question please E-mail me at GrifLongtin@live.com_
 
 ## Technologies Used
 
@@ -47,4 +49,4 @@ _{ For support or any question please E-mail me at GrifLongtin@live.com }_
 
 ### License
 
-Copyright (c) 2016 **_{GRIFFIN P LONGTIN}_**
+Copyright (c) 2016 **_GRIFFIN P LONGTIN_**
