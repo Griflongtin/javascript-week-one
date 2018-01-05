@@ -5,6 +5,8 @@ var concat = require('gulp-concat');
 var del = require('del');
 var jshint = require('gulp-jshint');
 var lib = require('bower-files')();
+var browserSync = require('browser-sync').create();
+
 
 gulp.task('bowerJS', function () {
   return gulp.src(lib.ext('js').files)
@@ -43,4 +45,25 @@ gulp.task("clean", function(){
 gulp.task('build', ['clean'], function() {
   gulp.start('jsBrowserify');
   gulp.start('bowerJS');
+});
+
+gulp.task('serve', function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+  gulp.watch(['js/*.js'], ['jsBuild']);
+  gulp.watch(['bower.json'], ['bowerBuild']);
+  gulp.watch(['css/app.css'], ['cssRelo']);
+});
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
+  browserSync.reload();
+});
+gulp.task('bowerBuild', ['bower'], function(){
+  browserSync.reload();
+});
+gulp.task('cssRelo', function(){
+  browserSync.reload();
 });
