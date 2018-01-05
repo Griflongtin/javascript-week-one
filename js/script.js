@@ -1,7 +1,8 @@
-function Test(test) {
-  this.test = test;
+export class Test {
+  constructor(test){
+    this.test = test;
+  }
+  testFunction() {
+    return this.test + " test";
+  }
 }
-Test.prototype.testFunction = function () {
-  return this.test + " test";
-};
-exports.TestModule = test;
