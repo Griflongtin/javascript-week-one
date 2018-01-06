@@ -2,8 +2,6 @@ export class User {
   constructor(born, date){
     this.born = born;
     this.date = date;
-    this.sDay = 31536000;
-    this.ydays = 365;
     this.days = 0;
     this.merc = 0;
   }
@@ -14,8 +12,7 @@ export class User {
     return this.days;
   }
   mercury() {
-    this.merc = this.sDay / (this.ydays * 0.24);
-    alert(this.marc);
+    this.merc = this.days * 0.24;
     return this.merc;
   }
 }
