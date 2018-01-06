@@ -15,6 +15,10 @@ var User = exports.User = function () {
 
     this.born = born;
     this.date = date;
+    this.sDay = 31536000;
+    this.ydays = 365;
+    this.days = 0;
+    this.merc = 0;
   }
 
   _createClass(User, [{
@@ -22,7 +26,15 @@ var User = exports.User = function () {
     value: function youTime() {
       var differnst = Math.abs(this.born.getTime() - this.date.getTime());
       var days = Math.ceil(differnst / (1000 * 3600 * 24));
-      return days * 86400;
+      this.days = days * 86400;
+      return this.days;
+    }
+  }, {
+    key: "mercury",
+    value: function mercury() {
+      this.merc = this.sDay / (this.ydays * 0.24);
+      alert(this.marc);
+      return this.merc;
     }
   }]);
 
@@ -38,5 +50,6 @@ var date1 = new Date("1/5/2017");
 var date2 = new Date(moment().format('MM-DD-YYYY'));
 var testOne = new _script.User(date1, date2);
 alert(testOne.youTime());
+alert(testOne.mercury());
 
 },{"./../js/script.js":1}]},{},[2]);
