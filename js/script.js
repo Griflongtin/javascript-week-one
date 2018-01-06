@@ -7,6 +7,8 @@ export class User {
     this.ven = 0;
     this.mar = 0;
     this.jup = 0;
+    this.smallLeft = 0;
+    this.marLeft = 0;
     this.dead = 'died'
   }
   youTime() {
@@ -31,15 +33,20 @@ export class User {
     this.jup = this.days / 11.86;
     return this.jup;
   }
-  mercuryLifeLeft() {
-    this.mercLeft = 2996000000 - this.days;
-    if (this.mercLeft <= 0) {
+  smallerLifeLeft() {
+    this.smallLeft = 2996000000 - (this.days + 240);
+    if (this.smallLeft <= 0) {
       return this.dead;
     } else {
-      return this.mercLeft;
+      return this.smallLeft;
     }
   }
-  timeLeft() {
-    this.mercuryLifeLeft();
+  marsLifeLeft() {
+    this.marLeft = 3469000000 - (this.days);
+    if (this.marLeft <= 0) {
+      return this.dead;
+    } else {
+      return this.marLeft;
+    }
   }
 }

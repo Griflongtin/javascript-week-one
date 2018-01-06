@@ -20,10 +20,11 @@ describe('user1', function() {
     expect(user1.jupiter()).toEqual(2659021.922428331);
   });
   it('time left on merc', function() {
-    if (user1.mercuryLifeLeft() >= number) {
-      expect(user1.mercuryLifeLeft()).toBeGreaterThan(number);
-    } else if (user1.mercuryLifeLeft() === 'deid') {
-      expect(user1.mercuryLifeLeft()).toEqual('deid');
+    if (user1.smallerLifeLeft() >= number) {
+      alert(user1.smallerLifeLeft());
+      expect(user1.smallerLifeLeft()).toBeGreaterThan(number);
+    } else if (user1.smallerLifeLeft() === 'deid') {
+      expect(user1.smallerLifeLeft()).toEqual('deid');
     } else {
       expect(number).toEqual(0);
     }

@@ -20,6 +20,8 @@ var User = exports.User = function () {
     this.ven = 0;
     this.mar = 0;
     this.jup = 0;
+    this.smallLeft = 0;
+    this.marLeft = 0;
     this.dead = 'died';
   }
 
@@ -56,19 +58,24 @@ var User = exports.User = function () {
       return this.jup;
     }
   }, {
-    key: 'mercuryLifeLeft',
-    value: function mercuryLifeLeft() {
-      this.mercLeft = 2996000000 - this.days;
-      if (this.mercLeft <= 0) {
+    key: 'smallerLifeLeft',
+    value: function smallerLifeLeft() {
+      this.smallLeft = 2996000000 - (this.days + 240);
+      if (this.smallLeft <= 0) {
         return this.dead;
       } else {
-        return this.mercLeft;
+        return this.smallLeft;
       }
     }
   }, {
-    key: 'timeLeft',
-    value: function timeLeft() {
-      this.mercuryLifeLeft();
+    key: 'marsLifeLeft',
+    value: function marsLifeLeft() {
+      this.marLeft = 3469000000 - this.days;
+      if (this.marLeft <= 0) {
+        return this.dead;
+      } else {
+        return this.marLeft;
+      }
     }
   }]);
 
