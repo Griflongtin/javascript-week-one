@@ -18,6 +18,7 @@ var User = exports.User = function () {
     this.days = 0;
     this.merc = 0;
     this.ven = 0;
+    this.mar = 0;
   }
 
   _createClass(User, [{
@@ -39,6 +40,12 @@ var User = exports.User = function () {
     value: function venus() {
       this.ven = this.days * 0.62;
       return this.ven;
+    }
+  }, {
+    key: "mars",
+    value: function mars() {
+      this.mar = this.days * 1.88;
+      return this.mar;
     }
   }]);
 

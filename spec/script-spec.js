@@ -6,11 +6,14 @@ describe('user1', function() {
   it('one year  = 31,536,000 seconds', function() {
     expect(user1.youTime()).toEqual(31536000);
   });
-  it('one year on earth = 7589376 seconds on mercury ', function() {
+  it('one year on earth = 7589376 seconds on mercury', function() {
     expect(user1.mercury()).toEqual(7568640);
   });
-  it('one year on earth = 19552320 seconds on venus ', function() {
-    alert(user1.venus());
+  it('one year on earth = 19552320 seconds on venus', function() {
     expect(user1.venus()).toEqual(19552320);
+  });
+  it('one year on earth = 19552320 seconds on mars', function() {
+    alert(user1.mars());
+    expect(user1.mars()).toEqual(59287680);
   });
 });
