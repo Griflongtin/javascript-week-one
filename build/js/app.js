@@ -9,21 +9,24 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Test = exports.Test = function () {
-  function Test(test) {
-    _classCallCheck(this, Test);
+var User = exports.User = function () {
+  function User(born, date) {
+    _classCallCheck(this, User);
 
-    this.test = test;
+    this.born = born;
+    this.date = date;
   }
 
-  _createClass(Test, [{
-    key: "testFunction",
-    value: function testFunction() {
-      return this.test + " test";
+  _createClass(User, [{
+    key: "youTime",
+    value: function youTime() {
+      var differnst = Math.abs(this.born.getTime() - this.date.getTime());
+      var days = Math.ceil(differnst / (1000 * 3600 * 24));
+      return days * 86400;
     }
   }]);
 
-  return Test;
+  return User;
 }();
 
 },{}],2:[function(require,module,exports){
@@ -31,7 +34,9 @@ var Test = exports.Test = function () {
 
 var _script = require('./../js/script.js');
 
-var testOne = new _script.Test('test');
-alert(testOne.testFuntion());
+var date1 = new Date("1/5/2017");
+var date2 = new Date(moment().format('MM-DD-YYYY'));
+var testOne = new _script.User(date1, date2);
+alert(testOne.youTime());
 
 },{"./../js/script.js":1}]},{},[2]);
