@@ -19,6 +19,7 @@ var User = exports.User = function () {
     this.merc = 0;
     this.ven = 0;
     this.mar = 0;
+    this.jup = 0;
   }
 
   _createClass(User, [{
@@ -32,20 +33,26 @@ var User = exports.User = function () {
   }, {
     key: "mercury",
     value: function mercury() {
-      this.merc = this.days * 0.24;
+      this.merc = this.days / 0.24;
       return this.merc;
     }
   }, {
     key: "venus",
     value: function venus() {
-      this.ven = this.days * 0.62;
+      this.ven = this.days / 0.62;
       return this.ven;
     }
   }, {
     key: "mars",
     value: function mars() {
-      this.mar = this.days * 1.88;
+      this.mar = this.days / 1.88;
       return this.mar;
+    }
+  }, {
+    key: "jupiter",
+    value: function jupiter() {
+      this.jup = this.days / 11.86;
+      return this.jup;
     }
   }]);
 
@@ -57,7 +64,7 @@ var User = exports.User = function () {
 
 var _script = require('./../js/script.js');
 
-var date1 = new Date("1/5/2017");
+var date1 = new Date("1/6/2017");
 var date2 = new Date(moment().format('MM-DD-YYYY'));
 var testOne = new _script.User(date1, date2);
 alert(testOne.youTime());

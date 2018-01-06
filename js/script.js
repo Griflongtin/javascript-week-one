@@ -6,6 +6,7 @@ export class User {
     this.merc = 0;
     this.ven = 0;
     this.mar = 0;
+    this.jup = 0;
   }
   youTime() {
     const differnst = Math.abs(this.born.getTime() - this.date.getTime());
@@ -14,15 +15,19 @@ export class User {
     return this.days;
   }
   mercury() {
-    this.merc = this.days * 0.24;
+    this.merc = this.days / 0.24;
     return this.merc;
   }
   venus() {
-    this.ven = this.days * 0.62;
+    this.ven = this.days / 0.62;
     return this.ven;
   }
   mars() {
-    this.mar = this.days * 1.88;
+    this.mar = this.days / 1.88;
     return this.mar;
+  }
+  jupiter() {
+    this.jup = this.days / 11.86;
+    return this.jup;
   }
 }

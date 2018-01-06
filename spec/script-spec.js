@@ -1,19 +1,21 @@
 import { User } from './../js/script.js';
-const date1 = new Date("1/6/2017");
-const date2 = new Date("1/6/2018");
+const date1 = new Date("1/4/2017");
+const date2 = new Date("1/4/2018");
 const user1 = new User(date1, date2);
 describe('user1', function() {
-  it('one year  = 31,536,000 seconds', function() {
+  it('one year  = 31536000 seconds', function() {
     expect(user1.youTime()).toEqual(31536000);
   });
-  it('one year on earth = 7589376 seconds on mercury', function() {
-    expect(user1.mercury()).toEqual(7568640);
+  it('one year on earth = 131400000 seconds on mercury', function() {
+    expect(user1.mercury()).toEqual(131400000);
   });
-  it('one year on earth = 19552320 seconds on venus', function() {
-    expect(user1.venus()).toEqual(19552320);
+  it('one year on earth = 50864516.12903226 seconds on venus', function() {
+    expect(user1.venus()).toEqual(50864516.12903226);
   });
-  it('one year on earth = 19552320 seconds on mars', function() {
-    alert(user1.mars());
-    expect(user1.mars()).toEqual(59287680);
+  it('one year on earth = 16774468.085106384 seconds on mars', function() {
+    expect(user1.mars()).toEqual(16774468.085106384);
+  });
+  it('one year on earth = 2659021.922428331 seconds on jupiter', function() {
+    expect(user1.jupiter()).toEqual(2659021.922428331);
   });
 });
