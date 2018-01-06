@@ -1,5 +1,5 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -20,10 +20,11 @@ var User = exports.User = function () {
     this.ven = 0;
     this.mar = 0;
     this.jup = 0;
+    this.dead = 'died';
   }
 
   _createClass(User, [{
-    key: "youTime",
+    key: 'youTime',
     value: function youTime() {
       var differnst = Math.abs(this.born.getTime() - this.date.getTime());
       var days = Math.ceil(differnst / (1000 * 3600 * 24));
@@ -31,28 +32,43 @@ var User = exports.User = function () {
       return this.days;
     }
   }, {
-    key: "mercury",
+    key: 'mercury',
     value: function mercury() {
       this.merc = this.days / 0.24;
       return this.merc;
     }
   }, {
-    key: "venus",
+    key: 'venus',
     value: function venus() {
       this.ven = this.days / 0.62;
       return this.ven;
     }
   }, {
-    key: "mars",
+    key: 'mars',
     value: function mars() {
       this.mar = this.days / 1.88;
       return this.mar;
     }
   }, {
-    key: "jupiter",
+    key: 'jupiter',
     value: function jupiter() {
       this.jup = this.days / 11.86;
       return this.jup;
+    }
+  }, {
+    key: 'mercuryLifeLeft',
+    value: function mercuryLifeLeft() {
+      this.mercLeft = 2996000000 - this.days;
+      if (this.mercLeft <= 0) {
+        return this.dead;
+      } else {
+        return this.mercLeft;
+      }
+    }
+  }, {
+    key: 'timeLeft',
+    value: function timeLeft() {
+      this.mercuryLifeLeft();
     }
   }]);
 

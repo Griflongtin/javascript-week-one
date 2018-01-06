@@ -7,6 +7,7 @@ export class User {
     this.ven = 0;
     this.mar = 0;
     this.jup = 0;
+    this.dead = 'died'
   }
   youTime() {
     const differnst = Math.abs(this.born.getTime() - this.date.getTime());
@@ -29,5 +30,16 @@ export class User {
   jupiter() {
     this.jup = this.days / 11.86;
     return this.jup;
+  }
+  mercuryLifeLeft() {
+    this.mercLeft = 2996000000 - this.days;
+    if (this.mercLeft <= 0) {
+      return this.dead;
+    } else {
+      return this.mercLeft;
+    }
+  }
+  timeLeft() {
+    this.mercuryLifeLeft();
   }
 }
