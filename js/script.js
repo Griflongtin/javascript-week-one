@@ -9,6 +9,7 @@ export class User {
     this.jup = 0;
     this.smallLeft = 0;
     this.marLeft = 0;
+    this.jupLeft = 0;
     this.dead = 'died'
   }
   youTime() {
@@ -42,11 +43,19 @@ export class User {
     }
   }
   marsLifeLeft() {
-    this.marLeft = 3469000000 - (this.days);
+    this.marLeft = 3469000000 - this.days;
     if (this.marLeft <= 0) {
       return this.dead;
     } else {
       return this.marLeft;
+    }
+  }
+  jupiterLifeLeft() {
+    this.jupLeft = 1577000000 - (this.days - 240);
+    if (this.jupLeft <= 0) {
+      return this.dead;
+    } else {
+      return this.jupLeft;
     }
   }
 }

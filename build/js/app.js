@@ -22,6 +22,7 @@ var User = exports.User = function () {
     this.jup = 0;
     this.smallLeft = 0;
     this.marLeft = 0;
+    this.jupLeft = 0;
     this.dead = 'died';
   }
 
@@ -75,6 +76,16 @@ var User = exports.User = function () {
         return this.dead;
       } else {
         return this.marLeft;
+      }
+    }
+  }, {
+    key: 'jupiterLifeLeft',
+    value: function jupiterLifeLeft() {
+      this.jupLeft = 1577000000 - (this.days - 240);
+      if (this.jupLeft <= 0) {
+        return this.dead;
+      } else {
+        return this.jupLeft;
       }
     }
   }]);
