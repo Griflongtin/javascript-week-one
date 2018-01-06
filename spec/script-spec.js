@@ -1,8 +1,12 @@
 import { User } from './../js/script.js';
 const date1 = new Date("1/4/2017");
 const date2 = new Date("1/4/2018");
+const date3 = new Date("1/4/2017");
+const date4 = new Date("1/4/3018");
 const user1 = new User(date1, date2);
+const userDead = new User(date3, date4);
 const number = 1;
+userDead.youTime();
 describe('user1', function() {
   it('one year  = 31536000 seconds', function() {
     expect(user1.youTime()).toEqual(31536000);
@@ -20,33 +24,21 @@ describe('user1', function() {
     expect(user1.jupiter()).toEqual(2659021.922428331);
   });
   it('time left on merc and ven', function() {
-    if (user1.smallerLifeLeft() >= number) {
-      alert(user1.smallerLifeLeft());
-      expect(user1.smallerLifeLeft()).toBeGreaterThan(number);
-    } else if (user1.smallerLifeLeft() === 'deid') {
-      expect(user1.smallerLifeLeft()).toEqual('deid');
-    } else {
-      expect(number).toEqual(0);
-    }
+    expect(user1.smallerLifeLeft()).toBeGreaterThan(number);
+  });
+  it('dead test for merc and ven', function() {
+    expect(userDead.smallerLifeLeft()).toEqual('died');
   });
   it('time left on mars', function() {
-    if (user1.marsLifeLeft() >= number) {
-      alert(user1.marsLifeLeft());
-      expect(user1.marsLifeLeft()).toBeGreaterThan(number);
-    } else if (user1.marsLifeLeft() === 'deid') {
-      expect(user1.marsLifeLeft()).toEqual('deid');
-    } else {
-      expect(number).toEqual(0);
-    }
+    expect(user1.marsLifeLeft()).toBeGreaterThan(number);
+  });
+  it('dead test for mars', function() {
+    expect(userDead.marsLifeLeft()).toEqual('died');
   });
   it('time left on mars', function() {
-    if (user1.jupiterLifeLeft() >= number) {
-      alert(user1.jupiterLifeLeft());
-      expect(user1.jupiterLifeLeft()).toBeGreaterThan(number);
-    } else if (user1.jupiterLifeLeft() === 'deid') {
-      expect(user1.jupiterLifeLeft()).toEqual('deid');
-    } else {
-      expect(number).toEqual(0);
-    }
+    expect(user1.jupiterLifeLeft()).toBeGreaterThan(number);
+  });
+  it('dead test for jupiter', function() {
+    expect(userDead.jupiterLifeLeft()).toEqual('died');
   });
 });
