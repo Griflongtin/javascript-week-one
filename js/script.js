@@ -1,7 +1,7 @@
-
 export class User {
-  constructor(born){
+  constructor(born, today){
     this.born = born;
+    this.today = today;
     this.days = 0;
     this.merc = 0;
     this.ven = 0;
@@ -13,8 +13,8 @@ export class User {
     this.dead = 'died'
   }
   youTime() {
-    const born = new Date(moment(this.born).format('MM-DD-YYYY'));
-    const today = new Date(moment().format('MM-DD-YYYY'));
+    const born = new Date(this.born);
+    const today = new Date(this.today);
     const differnst = Math.abs(born.getTime(born) - today.getTime(today));
     const days = Math.ceil(differnst / (1000 * 3600 * 24));
     this.days = days * 86400;

@@ -10,10 +10,11 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var User = exports.User = function () {
-  function User(born) {
+  function User(born, today) {
     _classCallCheck(this, User);
 
     this.born = born;
+    this.today = today;
     this.days = 0;
     this.merc = 0;
     this.ven = 0;
@@ -28,8 +29,8 @@ var User = exports.User = function () {
   _createClass(User, [{
     key: 'youTime',
     value: function youTime() {
-      var born = new Date(moment(this.born).format('MM-DD-YYYY'));
-      var today = new Date(moment().format('MM-DD-YYYY'));
+      var born = new Date(this.born);
+      var today = new Date(this.today);
       var differnst = Math.abs(born.getTime(born) - today.getTime(today));
       var days = Math.ceil(differnst / (1000 * 3600 * 24));
       this.days = days * 86400;
@@ -102,14 +103,15 @@ var _script = require("./../js/script.js");
 $(function () {
   $("#input-date").submit(function () {
     event.preventDefault();
-    var date = $("#date-input").val();
-    var user1 = new _script.User(date);
+    var born = $("#date-input-born").val();
+    var user1 = new _script.User(born, '01-06-2018');
     $("#you-time").append(user1.youTime());
     $("#mercury").append(user1.mercury());
     $("#venus").append(user1.venus());
     $("#mars").append(user1.mars());
     $("#jupiter").append(user1.jupiter());
-    $("#mercury-time", '#venus-time').append(user1.smallerLifeLeft());
+    $('#venus-time').append(user1.smallerLifeLeft());
+    $("#mercury-time").append(user1.smallerLifeLeft());
     $("#mars-time").append(user1.marsLifeLeft());
     $("#jupiter-time").append(user1.jupiterLifeLeft());
   });
