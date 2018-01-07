@@ -1,12 +1,12 @@
 # _GALACTIC AGE CALCULATOR_
 
-#### _Tells you your age based on planets orbits , {1/5/2018_
+#### _Tells you your age based on planets orbits , 1/6/2018_
 
 #### By _**GRIFFIN P LOGNTIN**_
 
 ## Description
 
-_:heavy_check_mark:_
+_This project when you put in your birthday will tell you how old you are in seconds. It will then tell you how old you are in seconds on other planets_
 
 
 ## Specs
