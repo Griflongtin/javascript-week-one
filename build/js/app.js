@@ -10,11 +10,10 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var User = exports.User = function () {
-  function User(born, date) {
+  function User(born) {
     _classCallCheck(this, User);
 
     this.born = born;
-    this.date = date;
     this.days = 0;
     this.merc = 0;
     this.ven = 0;
@@ -29,7 +28,9 @@ var User = exports.User = function () {
   _createClass(User, [{
     key: 'youTime',
     value: function youTime() {
-      var differnst = Math.abs(this.born.getTime() - this.date.getTime());
+      var born = new Date(moment(this.born).format('MM-DD-YYYY'));
+      var today = new Date(moment().format('MM-DD-YYYY'));
+      var differnst = Math.abs(born.getTime(born) - today.getTime(today));
       var days = Math.ceil(differnst / (1000 * 3600 * 24));
       this.days = days * 86400;
       return this.days;
@@ -94,14 +95,24 @@ var User = exports.User = function () {
 }();
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _script = require('./../js/script.js');
+var _script = require("./../js/script.js");
 
-var date1 = new Date("1/6/2017");
-var date2 = new Date(moment().format('MM-DD-YYYY'));
-var testOne = new _script.User(date1, date2);
-alert(testOne.youTime());
-alert(testOne.mercury());
+$(function () {
+  $("#input-date").submit(function () {
+    event.preventDefault();
+    var date = $("#date-input").val();
+    var user1 = new _script.User(date);
+    $("#you-time").append(user1.youTime());
+    $("#mercury").append(user1.mercury());
+    $("#venus").append(user1.venus());
+    $("#mars").append(user1.mars());
+    $("#jupiter").append(user1.jupiter());
+    $("#mercury-time", '#venus-time').append(user1.smallerLifeLeft());
+    $("#mars-time").append(user1.marsLifeLeft());
+    $("#jupiter-time").append(user1.jupiterLifeLeft());
+  });
+});
 
 },{"./../js/script.js":1}]},{},[2]);
