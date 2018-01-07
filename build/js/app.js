@@ -96,15 +96,17 @@ var User = exports.User = function () {
 }();
 
 },{}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
-var _script = require("./../js/script.js");
+var _script = require('./../js/script.js');
 
 $(function () {
   $("#input-date").submit(function () {
     event.preventDefault();
+    $('#input-form-section').hide();
+    $('#output-section').show();
     var born = $("#date-input-born").val();
-    var user1 = new _script.User(born, '01-06-2018');
+    var user1 = new _script.User(born, moment().format('L'));
     $("#you-time").append(user1.youTime());
     $("#mercury").append(user1.mercury());
     $("#venus").append(user1.venus());

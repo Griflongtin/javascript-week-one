@@ -3,8 +3,10 @@ import { User } from './../js/script.js';
 $(function() {
   $("#input-date").submit(function() {
     event.preventDefault();
+    $('#input-form-section').hide();
+    $('#output-section').show();
     const born = $("#date-input-born").val();
-    const user1 = new User(born, '01-06-2018');
+    const user1 = new User(born, moment().format('L'));
     $("#you-time").append(user1.youTime());
     $("#mercury").append(user1.mercury());
     $("#venus").append(user1.venus());

@@ -3,24 +3,47 @@
   <head>
     <script src="build/js/vendor.min.js"></script>
     <script type="text/javascript" src="build/js/app.js"></script>
+    <link rel="stylesheet" href="css/app.css">
     <meta charset="utf-8">
     <title>Time Menu</title>
   </head>
   <body>
     <section id="input-form-section">
       <form id="input-date">
+        <h1>input your birthday!</h1>
         <input type="date" id="date-input-born">
         <button type="submit" id="form-btn">Submit</button>
       </form>
     </section>
-    <span id="you-time"></span>
-    <span id="mercury"></span>
-    <span id="mercury-time"></span>
-    <span id="venus"></span>
-    <span id="venus-time"></span>
-    <span id="mars"></span>
-    <span id="mars-time"></span>
-    <span id="jupiter"></span>
-    <span id="jupiter-time"></span>
+    <section id="output-section">
+      <header>
+        <h1>How old are you?</h1>
+        <p>Dont think about it to much, You are still the same age!</p>
+      </header>
+      <div class="when-you">
+        <p>Well you have Lived <span id="you-time"></span> seconds on earth.</p>
+        <p>Wish I had a dollor for every second you have been alive.</p>
+      </div>
+      <div class="merc-you">
+        <p>If you lived on mercury time you would be <span id="mercury"></span> seconds old.</p>
+        <p>And if you where born on this planet your:</p>
+        <p>Time left: <span id="mercury-time"></span></p>
+      </div>
+      <div class="ven-you">
+        <p>If you lived on venus time you would be <span id="venus"></span> seconds old.</p>
+        <p>And if you where born on this planet your:</p>
+        <p>Time left: <span id="venus-time"></span></p>
+      </div>
+      <div class="mar-you">
+        <p>If you lived on mars time you would be <span id="mars"></span> seconds old.</p>
+        <p>And if you where born on this planet your:</p>
+        <p>Time left: <span id="mars-time"></span></p>
+      </div>
+      <div class="jup-you">
+        <p>If you lived on jupiter time you would be <span id="jupiter"></span> seconds old.</p>
+        <p>And if you where born on this planet your:</p>
+        <p>Time left: <span id="jupiter-time"></span></p>
+      </div>
+    </section>
   </body>
 </html>
